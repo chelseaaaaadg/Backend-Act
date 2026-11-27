@@ -33,6 +33,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::prefix('/posts')->group(function($route) {
         $route->get('/', [PostController::class, 'index']);
+        $route->post('/', [PostController::class, 'store']);
         $route->get('/{post}', [PostController::class, 'show']);
         $route->put('/{post}', [PostController::class, 'update']);
         $route->patch('/{post}', [PostController::class, 'update']);
